@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-
 const API = import.meta.env.VITE_BASE_URL;
+
 
 const SongNewForm = () => {
   const navigate = useNavigate();
@@ -31,13 +31,13 @@ const SongNewForm = () => {
         "Content-Type": "application/json",
       },
     })
-      .then(() => navigate(`/songs`))
-      .catch((error) => console.error("catch", error));
+    .then(() => navigate('/songs'))
+    .catch((error) => console.error("catch", error));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addSong();
+    addSong()
   };
 
   return (
@@ -86,10 +86,10 @@ const SongNewForm = () => {
         />          
         <br />
 
-        <input type="submit" />
+        <button type="submit">SUBMIT</button>
       </form>
       <Link to={`/songs`}>
-        <button>Cancel</button>
+        <button>CANCEL</button>
       </Link>
     </div>
   );

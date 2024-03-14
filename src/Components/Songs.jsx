@@ -8,12 +8,8 @@ const Songs = () => {
 
   useEffect(() => {
     fetch(`${API}/songs`)
-      .then((res) => {
-        return res.json()
-      })
-      .then((data) => {
-        setSongs(data)
-      })
+      .then((res) => res.json())
+      .then((data) => setSongs(data))
       .catch((error) => console.error(error))
   }, [])
 
