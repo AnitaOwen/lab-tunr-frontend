@@ -1,9 +1,13 @@
-import React from 'react'
+import SongEditForm from "../Components/SongEditForm";
+
 
 const Edit = () => {
   return (
-    <div>Edit</div>
-  )
+    <div className="New Edit">
+      <h2>Edit</h2>
+      <SongEditForm />
+    </div>
+  );
 }
 
 export default Edit
