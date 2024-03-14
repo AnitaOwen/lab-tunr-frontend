@@ -1,9 +1,12 @@
-import React from 'react'
+import SongDetails from "../Components/SongDetails";
 
 const Show = () => {
   return (
-    <div>Show</div>
-  )
+    <div className="Show">
+      <h2>Show</h2>
+      <SongDetails />
+    </div>
+  );
 }
 
 export default Show

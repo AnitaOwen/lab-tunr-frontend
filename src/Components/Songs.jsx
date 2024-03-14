@@ -24,7 +24,7 @@ const Songs = () => {
           <thead>
             <tr>
               <th></th>
-              <th>Song</th>
+              <th>SONGS</th>
             </tr>
           </thead>
           <tbody>
