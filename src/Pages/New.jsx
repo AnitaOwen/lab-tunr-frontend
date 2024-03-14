@@ -1,9 +1,13 @@
-import React from 'react'
+import SongNewForm from "../Components/SongNewForm";
+
 
 const New = () => {
   return (
-    <div>New</div>
-  )
+    <div className="New">
+      <h2>New</h2>
+      <SongNewForm />
+    </div>
+  );
 }
 
 export default New
