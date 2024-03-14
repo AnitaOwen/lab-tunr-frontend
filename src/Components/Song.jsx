@@ -5,7 +5,7 @@ const Song = ({ song }) => {
     <tr>
       <td>
         {song.is_favorite ? (
-          <span>⭐️</span>
+          <span>&nbsp;⭐️&nbsp;</span>
         ) : (
           <span>&nbsp; &nbsp; &nbsp;</span>
         )}
