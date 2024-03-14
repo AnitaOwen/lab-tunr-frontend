@@ -23,8 +23,10 @@ const Songs = () => {
         <table>
           <thead>
             <tr>
-              <th></th>
-              <th>SONGS</th>
+              <th>FAV</th>
+              <th>SONG</th>
+              <th>ARTIST</th>
+              <th>TIME</th>
             </tr>
           </thead>
           <tbody>

@@ -12,9 +12,11 @@ const Song = ({ song }) => {
       </td>
       <td>
         <Link to={`/songs/${song.id}`}>
-          <h4>"{song.name}" - <span>{song.artist}</span></h4>
+        {song.name}
         </Link>
       </td>
+      <td>{song.artist}</td>
+      <td>{song.time}</td>
     </tr>
   );
 }

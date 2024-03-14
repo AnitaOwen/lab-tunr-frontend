@@ -11,7 +11,7 @@ const SongDetails = () => {
     fetch(`${API}/songs/${id}`, {
       method: 'DELETE',
     })
-      .then(() => navigate(`/songs`))
+      .then(() => navigate('/songs'))
       .catch((error) => console.error(error))
   }
 

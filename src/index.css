@@ -3,8 +3,53 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+h1{
+  text-align: center;
+  height: 100px;
+  padding-top: 25px;
+  background-color: rgba(148, 37, 126, 0.894);
+}
 table {
-  width: 60%;
+  width: 55%;
   margin: auto;
+}
+th{
+  text-align: left;
+  font-size: 12px;
+  font-weight: 200;
+  color: gray
+}
+
+button{
+  padding: 8px;
+  width: 150px;
+  background: rgba(61, 42, 188, 0.354);
+  border-radius: 7px;
+}
+a{
+  text-decoration: none;
+}
+article h2, h3, h5{
+  text-align: center;
+  padding-bottom: 10px;
+}
+.add-song-button{
+  /* margin: 25px; */
+}
+
+.showNavigation{
+  display: flex;
+  justify-content: center;
+}
+.showNavigation div{
+  padding: 10px;
+}
+
+.nav-links{
+  /* border: 1px solid red; */
+  display:grid;
+  grid-template-columns: 5fr 1fr;
+  padding: 10px 15px 10px 15px;
+  background-color: rgba(150, 79, 180, 0.563);
+  margin-bottom: 25px;
 }
