@@ -9,6 +9,19 @@ h1{
   padding-top: 25px;
   background-color: rgba(148, 37, 126, 0.894);
 }
+table {
+  width: 55%;
+  margin: auto;
+}
+th{
+  text-align: left;
+  font-size: 12px;
+  font-weight: 200;
+  color: gray
+}
+tr{
+  height: 40px;
+}
 button{
   padding: 8px;
   width: 150px;
@@ -21,19 +34,6 @@ a{
 article h2, h3, h5{
   text-align: center;
   padding-bottom: 10px;
-}
-.songs table {
-  width: 55%;
-  margin: auto;
-}
-.songs th{
-  text-align: left;
-  font-size: 12px;
-  font-weight: 200;
-  color: gray
-}
-.songs tr{
-  height: 40px;
 }
 
 .showNavigation{

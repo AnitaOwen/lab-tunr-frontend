@@ -1,8 +1,9 @@
+import PlaylistNewForm from "../Components/PlaylistNewForm"
 
 const NewPlaylist = () => {
   return (
     <div>
-        <NewPlaylist />
+        <PlaylistNewForm />
     </div>
   )
 }

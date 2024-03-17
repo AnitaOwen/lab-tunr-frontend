@@ -29,7 +29,7 @@ const PlaylistDetails = () => {
                     <td>Name: {playlist.name} ({playlist.playlistSongs ? playlist.playlistSongs.length : 0} songs)</td>
                 </tr>
                 <tr>
-                    <td>Description: {playlist.description}</td>
+                    <td>Description: {playlist.description}.</td>
                 </tr>
                 <tr>
                     <table>
@@ -67,7 +67,12 @@ const PlaylistDetails = () => {
                 </tr>
             </tbody>
         </table>
-        <button onClick={handleDelete}>DELETE PLAYLIST</button>
+        <div className="form-buttons">
+            <button onClick={handleDelete}>DELETE PLAYLIST</button>
+            <Link to={`/playlists/${id}/edit`}>
+              <button>EDIT DETAILS</button>
+            </Link>
+        </div>
     </article>
   )
 }
