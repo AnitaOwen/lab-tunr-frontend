@@ -1,8 +1,8 @@
-
+import PlaylistEditForm from "../Components/PlaylistEditForm"
 const EditPlaylist = () => {
   return (
     <div>
-        <EditPlaylist />
+        <PlaylistEditForm />
     </div>
   )
 }
