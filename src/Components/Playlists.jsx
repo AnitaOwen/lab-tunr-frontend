@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-// import Playlist from "./Playlist";
+import Playlist from "./Playlist";
 
 const API = import.meta.env.VITE_BASE_URL;
 
@@ -25,12 +25,7 @@ const Playlists = () => {
       </thead>
       <tbody>
         {playlists.map((playlist) => (
-          <tr key={playlist.id}>
-            {/* <td>{playlist.id}</td> */}
-            <td>{playlist.name}</td>
-            <td>{playlist.description}</td>
-            <td>{playlist.songs.length}</td>
-          </tr>
+          <Playlist key={playlist.id} playlist={playlist} />
         ))}
       </tbody>
     </table>  

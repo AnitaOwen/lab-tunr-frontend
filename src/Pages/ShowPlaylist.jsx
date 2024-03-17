@@ -1,8 +1,8 @@
-
+import PlaylistDetails from "../Components/PlaylistDetails"
 const ShowPlaylist = () => {
   return (
     <div>
-        <ShowPlaylist />
+        <PlaylistDetails />
     </div>
   )
 }
