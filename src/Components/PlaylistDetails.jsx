@@ -8,11 +8,13 @@ const PlaylistDetails = () => {
     const navigate = useNavigate()
 
     const handleDelete = () => {
-        fetch(`${API}/playlists/${id}`, {
-            method: 'DELETE',
-        })
-        .then(() => navigate('/playlists'))
-        .catch((error) => console.error(error))
+        if (window.confirm("Are you sure you want to delete this playlist?")) {
+            fetch(`${API}/playlists/${id}`, {
+                method: 'DELETE',
+            })
+            .then(() => navigate('/playlists'))
+            .catch((error) => console.error(error))
+        }
     }
 
     useEffect(() => {
@@ -31,40 +33,38 @@ const PlaylistDetails = () => {
                 <tr>
                     <td>Description: {playlist.description}.</td>
                 </tr>
-                <tr>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>FAV</th>
-                                <th>SONG</th>
-                                <th>ARTIST</th>
-                                <th>ALBUM</th>
-                                <th>TIME</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {!playlist.playlistSongs ? null : (
-                            playlist.playlistSongs.map(({id, is_favorite, name, artist, time, album }) => (
-                                <tr key={id}>
-                                    <td>
-                                        {is_favorite ? (
-                                            <span>&nbsp;⭐️&nbsp;</span>
-                                        ) : (
-                                            <span>&nbsp; &nbsp; &nbsp;</span>
-                                        )}
-                                    </td>
-                                    <td>
-                                        <Link to={`/songs/${id}`}>{name}</Link>
-                                    </td>
-                                    <td>{artist}</td>
-                                    <td>{album}</td>
-                                    <td>{time}</td>
-                                </tr>
-                            ))
-                        )}
-                        </tbody>
-                    </table>
-                </tr>
+            </tbody>
+        </table>
+        <table>
+            {playlist.playlistSongs && playlist.playlistSongs[0] && (
+                <thead>
+                    <tr>
+                        <th>FAV</th>
+                        <th>SONG</th>
+                        <th>ARTIST</th>
+                        <th>ALBUM</th>
+                        <th>TIME</th>
+                    </tr>
+                </thead>
+            )}     
+            <tbody>
+                {!playlist.playlistSongs ? null : (
+                    playlist.playlistSongs.map(({id, is_favorite, name, artist, time, album }) => (
+                        <tr key={id}>
+                            <td>
+                                {is_favorite ? (
+                                    <span>&nbsp;⭐️&nbsp;</span>
+                                ) : (
+                                    <span>&nbsp; &nbsp; &nbsp;</span>
+                                )}
+                            </td>
+                            <td><Link to={`/songs/${id}`}>{name}</Link></td>
+                            <td>{artist}</td>
+                            <td>{album}</td>
+                            <td>{time}</td>
+                        </tr>
+                    ))
+                )}
             </tbody>
         </table>
         <div className="form-buttons">
