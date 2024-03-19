@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // PAGES
 import FourOFour from "./Pages/FourOFour";
 import Home from "./Pages/Home";
-import IndexPlaylist from "./Pages/IndexPlaylist";
-import NewPlaylist from "./Pages/NewPlaylist";
-import ShowPlaylist from "./Pages/ShowPlaylist";
-import EditPlaylist from "./Pages/EditPlaylist";
+import IndexPlaylist from "./Pages/Index";
+import NewPlaylist from "./Pages/New";
+import ShowPlaylist from "./Pages/Show";
+import EditPlaylist from "./Pages/Edit";
 
 // COMPONENTS
 import Header from "./Components/Header";
@@ -20,10 +20,10 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/playlists" element={<IndexPlaylist />} /> 
-            <Route path="/playlists/new" element={<NewPlaylist />} /> 
-            <Route path="/playlists/:id" element={<ShowPlaylist/>} />
-            <Route path="/playlists/:id/edit" element={<EditPlaylist />} />
+            <Route path="/playlists" element={<Index />} /> 
+            <Route path="/playlists/new" element={<New />} /> 
+            <Route path="/playlists/:id" element={<Show />} />
+            <Route path="/playlists/:id/edit" element={<Edit />} />
             <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>
