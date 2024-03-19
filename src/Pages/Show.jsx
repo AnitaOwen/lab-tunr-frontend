@@ -1,12 +1,11 @@
-import SongDetails from "../Components/SongDetails";
-
+import PlaylistDetails from "../Components/PlaylistDetails"
 const Show = () => {
   return (
     <div className="Show">
       <h2>Show</h2>
-      <SongDetails />
+        <PlaylistDetails />
     </div>
-  );
+  )
 }
 
 export default Show

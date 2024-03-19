@@ -1,13 +1,11 @@
-import SongEditForm from "../Components/SongEditForm";
-
-
+import PlaylistEditForm from "../Components/PlaylistEditForm"
 const Edit = () => {
   return (
-    <div className="New">
-      {/* <h2>Edit</h2> */}
-      <SongEditForm />
+    <div className="New Edit">
+      <h2>Edit</h2>
+        <PlaylistEditForm />
     </div>
-  );
+  )
 }
 
 export default Edit

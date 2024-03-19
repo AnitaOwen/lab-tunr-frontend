@@ -66,3 +66,6 @@ article h2, h3, h5{
   display:flex;
   justify-content: center;
 }
+.x{
+  color: rgb(254, 127, 127)
+}

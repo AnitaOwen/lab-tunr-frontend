@@ -1,12 +1,12 @@
-import Songs from "../Components/Songs";
-import { Link } from "react-router-dom";
+import Playlists from "../Components/Playlists"
+
 const Index = () => {
   return (
-    <div className="Index">
-      {/* <h2>Index</h2> */}
-      <Songs />
+    <div className="playlistIndex">
+      <h2>Index</h2>
+      <Playlists />
     </div>
-  );
+  )
 }
 
 export default Index

@@ -1,13 +1,12 @@
-import SongNewForm from "../Components/SongNewForm";
-
+import PlaylistNewForm from "../Components/PlaylistNewForm"
 
 const New = () => {
   return (
     <div className="New">
-      {/* <h2>New</h2> */}
-      <SongNewForm />
+      <h2>New</h2>
+        <PlaylistNewForm />
     </div>
-  );
+  )
 }
 
 export default New

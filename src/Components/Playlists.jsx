@@ -14,21 +14,21 @@ const Playlists = () => {
       }, [])
   return (
     <div className="Playlists">
-    <table>
-      <thead>
-        <tr>
-          {/* <th>ID</th> */}
-          <th>Name</th>
-          <th>Description</th>
-          <th>Number of Songs</th>
-        </tr>
-      </thead>
-      <tbody>
-        {playlists.map((playlist) => (
-          <Playlist key={playlist.id} playlist={playlist} />
-        ))}
-      </tbody>
-    </table>  
+      <table>
+        <thead>
+          <tr>
+            {/* <th>ID</th> */}
+            <th>Name</th>
+            <th>Description</th>
+            <th>Number of Songs</th>
+          </tr>
+        </thead>
+        <tbody>
+          {playlists.map((playlist) => (
+            <Playlist key={playlist.id} playlist={playlist} />
+          ))}
+        </tbody>
+      </table>  
     </div>
   )
 }

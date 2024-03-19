@@ -7,19 +7,11 @@ const Header = () => {
       <div className="nav-links">
         <div>
           <h2>
-            <Link to="/songs">Songs</Link>
-          </h2>
-          <Link to="/songs/new">
-            ADD A NEW SONG
-          </Link>
-        </div>
-        <div>
-          <h2>
             <Link to="/playlists">Playlists</Link>
           </h2>
-          <Link to="/playlists/new">
+          {/* <Link to="/playlists/new">
             CREATE A NEW PLAYLIST
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

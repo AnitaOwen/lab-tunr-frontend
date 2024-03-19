@@ -1,21 +1,23 @@
 import { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom'
 import Song from "./Song";
 
-const API = import.meta.env.VITE_BASE_URL;
+const API = import.meta.env.VITE_BASE_URL
 
 const Songs = () => {
   const [songs, setSongs] = useState([]);
+  let { id } = useParams()
 
   useEffect(() => {
-    fetch(`${API}/songs`)
+    fetch(`${API}/playlists/${id}/songs`)
       .then((res) => res.json())
-      .then((data) => setSongs(data))
+      .then((data) => setSongs(data.songs))
       .catch((error) => console.error(error))
-  }, [])
+  }, [id])
 
   return (
-    <div className="Songs">
-      <section>
+    <section className="Songs">
+      <h2>Songs</h2>
         <table>
           <thead>
             <tr>
@@ -27,12 +29,11 @@ const Songs = () => {
           </thead>
           <tbody>
             {songs.map((song) => {
-              return <Song key={song.id} song={song} />;
+              return <Song key={song.id} song={song} handleDelete={handleDelete} />;
             })}
           </tbody>
         </table>
-      </section>
-    </div>
+    </section>
   );
 }
 
