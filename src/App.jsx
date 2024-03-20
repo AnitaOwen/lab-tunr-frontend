@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // PAGES
 import FourOFour from "./Pages/FourOFour";
 import Home from "./Pages/Home";
-import IndexPlaylist from "./Pages/Index";
-import NewPlaylist from "./Pages/New";
-import ShowPlaylist from "./Pages/Show";
-import EditPlaylist from "./Pages/Edit";
+import Index from "./Pages/Index";
+import New from "./Pages/New";
+import Show from "./Pages/Show";
+import Edit from "./Pages/Edit";
 
 // COMPONENTS
 import Header from "./Components/Header";

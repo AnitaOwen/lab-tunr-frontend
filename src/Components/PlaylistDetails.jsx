@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import Songs from "./Songs";
+import { useState, useEffect } from "react"
+import { Link, useParams, useNavigate } from "react-router-dom"
+
+import Songs from "./Songs"
 
 const API = import.meta.env.VITE_BASE_URL;
 
@@ -20,7 +21,7 @@ const PlaylistDetails = () => {
     }
 
     useEffect(() => {
-        fetch(`${API}/playlists/${id}`)
+        fetch(`${API}/playlists/${id}/songs`)
         .then((res) => res.json())
         .then((data) => setPlaylist(data))
         .catch((error) => console.error(error))
@@ -28,7 +29,9 @@ const PlaylistDetails = () => {
 
   return (
     <article>
-        <table>
+        <h3>{playlist.name} ({playlist.songs ? playlist.songs.length : 0} songs)</h3>
+        <h5>{playlist.description}</h5>
+        {/* <table>
             <tbody>
                 <tr>
                     <td>Name: {playlist.name} ({playlist.songs ? playlist.songs.length : 0} songs)</td>
@@ -37,12 +40,12 @@ const PlaylistDetails = () => {
                     <td>Description: {playlist.description}.</td>
                 </tr>
             </tbody>
-        </table>
+        </table> */}
         <div className="form-buttons">
             <Link to={`/playlists`}>
                 <button>Back</button>
             </Link>
-            <Link to={`/playlists/${_id}/edit`}>
+            <Link to={`/playlists/${id}/edit`}>
               <button>Edit</button>
             </Link>
             <button onClick={handleDelete}>Delete</button>

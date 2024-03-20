@@ -22,12 +22,12 @@ th{
 tr{
   height: 40px;
 }
-button{
+/* button{
   padding: 8px;
   width: 150px;
   background: rgba(61, 42, 188, 0.354);
   border-radius: 7px;
-}
+} */
 a{
   text-decoration: none;
 }
@@ -68,4 +68,8 @@ article h2, h3, h5{
 }
 .x{
   color: rgb(254, 127, 127)
+}
+
+.bold{
+  font-weight: 600;
 }
