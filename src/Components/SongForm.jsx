@@ -5,6 +5,7 @@ const API = import.meta.env.VITE_BASE_URL;
 
 const SongForm = ({ songDetails, handleEdit, handleAdd, toggleView, children }) => {
   const { id } = useParams();
+
   const [newOrUpdatedSong, setNewOrUpdatedSong] = useState({
     name: "",
     album: "",
@@ -22,28 +23,6 @@ const SongForm = ({ songDetails, handleEdit, handleAdd, toggleView, children }) 
     setNewOrUpdatedSong({ ...newOrUpdatedSong, is_favorite: !newOrUpdatedSong.is_favorite })
   }
 
-
-  // Update a song. Redirect to show view.
-  // const updateSong = () => {
-  //   // console.log(`${API}/songs/${id}`)
-
-  //   fetch(`${API}/songs/${id}`, {
-  //     method: "PUT",
-  //     body: JSON.stringify(song),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then(() => navigate(`/songs/${id}`))
-  //     .catch((error) => console.error("catch", error));
-  // };
-
-  useEffect(() => {
-    if(songDetails){
-      setNewOrUpdatedSong(songDetails)
-    }
-  }, [songDetails])
-
   const handleSubmit = (event) => {
     event.preventDefault()
     if (songDetails) handleEdit(newOrUpdatedSong, id)
@@ -59,16 +38,13 @@ const SongForm = ({ songDetails, handleEdit, handleAdd, toggleView, children }) 
       playlist_id: id, 
   })
 
+  useEffect(() => {
+    if(songDetails){
+      setNewOrUpdatedSong(songDetails)
+    }
+  }, [songDetails])
+
   }
-
-    // On page load, fill in the form with the song data.
-    // useEffect(() => {
-    //   fetch(`${API}playlists/${id}/songs/${}`)
-    //     .then((res) => res.json())
-    //     .then((data) => setSong(data))
-    //     .catch((error) => console.error(error))
-    // }, [id]);
-
     return (
       <div className="Edit">
         {children}
@@ -125,12 +101,6 @@ const SongForm = ({ songDetails, handleEdit, handleAdd, toggleView, children }) 
           />          
           </div>
           <br />
-          {/* <div className="form-buttons">
-            <button type="submit">SUBMIT</button>
-            <Link to={`/songs/${id}`}>
-              <button>CANCEL</button>
-            </Link>
-          </div> */}
           <input type="submit" />
         </form>
 

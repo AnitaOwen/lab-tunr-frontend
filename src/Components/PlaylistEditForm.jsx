@@ -65,9 +65,9 @@ const PlaylistEditForm = () => {
         />
         </div>
         <div className="form-buttons">
-          <button type="submit">SUBMIT</button>
-          <Link to={'/playlists'}>
-            <button>CANCEL</button>
+          <button type="submit">Submit</button>
+          <Link to={`/playlists/${id}`}>
+            <button>Cancel</button>
           </Link>
         </div>
       </form>

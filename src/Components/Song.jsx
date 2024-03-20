@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import SongForm from "./SongForm";
 
-const Song = ({ song, handleDelete, handleEdit}) => {
+const Song = ({song, handleDelete, handleEdit}) => {
   const [viewEditForm, setViewEditForm] = useState(false)
   const toggleView = () => {
     setViewEditForm(!viewEditForm)
@@ -22,19 +22,6 @@ const Song = ({ song, handleDelete, handleEdit}) => {
             <span>&nbsp; &nbsp; &nbsp;</span>
           )} <span className='bold'>{song.name}</span> - {song.artist} - {song.time}
         </div>
-
-        // <tr>
-        //   <td>
-        //     {song.is_favorite ? (
-        //       <span>&nbsp;⭐️&nbsp;</span>
-        //     ) : (
-        //       <span>&nbsp; &nbsp; &nbsp;</span>
-        //     )}
-        //   </td>
-        //   <td>{song.name}</td>
-        //   <td>{song.artist}</td>
-        //   <td>{song.time}</td>
-        // </tr>
       )}
       <div className="song-actions">
         <button onClick={toggleView}>

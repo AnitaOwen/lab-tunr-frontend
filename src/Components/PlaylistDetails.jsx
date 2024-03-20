@@ -31,16 +31,6 @@ const PlaylistDetails = () => {
     <article>
         <h3>{playlist.name} ({playlist.songs ? playlist.songs.length : 0} songs)</h3>
         <h5>{playlist.description}</h5>
-        {/* <table>
-            <tbody>
-                <tr>
-                    <td>Name: {playlist.name} ({playlist.songs ? playlist.songs.length : 0} songs)</td>
-                </tr>
-                <tr>
-                    <td>Description: {playlist.description}.</td>
-                </tr>
-            </tbody>
-        </table> */}
         <div className="form-buttons">
             <Link to={`/playlists`}>
                 <button>Back</button>

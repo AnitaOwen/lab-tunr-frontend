@@ -32,7 +32,6 @@ const Songs = () => {
 }
 
 const handleEdit = (updatedSong) => {
-  console.log(`${API}/playlists/${id}/songs/${updatedSong.id}`)
   fetch(`${API}/playlists/${id}/songs/${updatedSong.id}`, {
     method: 'PUT', 
     body: JSON.stringify(updatedSong), 
@@ -50,22 +49,6 @@ const handleEdit = (updatedSong) => {
   .catch((error) => console.error('catch', error))
 }
 
- // Update a song. Redirect to show view.
-  // const updateSong = () => {
-  //   // console.log(`${API}/songs/${id}`)
-
-  //   fetch(`${API}/songs/${id}`, {
-  //     method: "PUT",
-  //     body: JSON.stringify(song),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   })
-  //     .then(() => navigate(`/songs/${id}`))
-  //     .catch((error) => console.error("catch", error));
-  // };
-
-
 const handleAdd = (newSong) => {
   fetch(`${API}/playlists/${id}/songs`, {
     method: 'POST',
@@ -74,7 +57,10 @@ const handleAdd = (newSong) => {
       'Content-Type': 'application/json',
     }
   })
-  .then((data) => setSongs([data, ...songs]))
+  .then((response) => response.json())
+  .then((data) => {
+    setSongs([data, ...songs])
+  })
   .catch((error) => console.error('catch', error))
 }
 
@@ -88,26 +74,13 @@ useEffect(() => {
       <SongForm handleAdd={handleAdd}>
             <h5>Add a New Song</h5>
         </SongForm>
-        {/* <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th>Title</th>
-              <th>Artist</th>
-              <th>Length</th>
-            </tr>
-          </thead>
-          <tbody> */}
             {songs.map((song) => <Song 
               key={song.id} 
               song={song} 
               handleDelete={handleDelete} 
               handleEdit={handleEdit}
-              // handleAdd={handleAdd} 
               />
             )}
-          {/* </tbody>
-        </table> */}
     </section>
   );
 }
